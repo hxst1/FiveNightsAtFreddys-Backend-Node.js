@@ -1,0 +1,29 @@
+{
+  "name": "w6chw-backend-edu-ruiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxst1/w6chw-backend-edu-ruiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hxst1/w6chw-backend-edu-ruiz/issues"
+  },
+  "homepage": "https://github.com/hxst1/w6chw-backend-edu-ruiz#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.3.0"
+  }
+}
