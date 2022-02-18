@@ -24,6 +24,12 @@
     "husky": "^7.0.4"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.3.0"
+    "chalk": "^4.0.0",
+    "debug": "^4.3.3",
+    "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2",
+    "mongoose-type-url": "^2.1.0"
   }
 }
