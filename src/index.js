@@ -5,7 +5,7 @@ const chalk = require("chalk");
 const initialServer = require("./server");
 const conectMongoDB = require("./db");
 
-const port = process.env.SERVER_PORT || 4444;
+const port = process.env.PORT || 4444;
 const mongoDB = process.env.MONGO_SRING;
 
 (async () => {
