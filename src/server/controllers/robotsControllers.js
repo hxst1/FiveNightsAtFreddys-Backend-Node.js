@@ -1,4 +1,3 @@
-const debug = require("debug")("robots: sdsderrosdsdsdsdsrs");
 const Robot = require("../../db/models/Robot");
 
 const getAllRobots = async (req, res) => {
@@ -8,6 +7,7 @@ const getAllRobots = async (req, res) => {
 
 const getRobot = async (req, res, next) => {
   const { idRobot } = req.params;
+
   try {
     const robot = await Robot.findById(idRobot);
     if (robot) {
