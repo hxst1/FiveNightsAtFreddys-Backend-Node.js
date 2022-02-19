@@ -1,6 +1,10 @@
 const debug = require("debug")("robots: Server");
-const express = require("express");
 const chalk = require("chalk");
+const morgan = require("morgan");
+const express = require("express");
+const helmet = require("helmet");
+const robotsRouter = require("./routers/ robotsRouter");
+const { notFoundError, generalError } = require("./middlewares/errors");
 
 const app = express();
 
@@ -20,5 +24,14 @@ const initialServer = (port) =>
       reject(new Error(errorMessage));
     });
   });
+
+app.use(morgan("dev"));
+app.use(express.json());
+
+app.use(helmet());
+
+app.use("/robots", robotsRouter);
+app.use(notFoundError);
+app.use(generalError);
 
 module.exports = initialServer;
