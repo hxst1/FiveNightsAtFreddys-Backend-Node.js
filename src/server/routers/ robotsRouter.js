@@ -13,8 +13,8 @@ const tokenValidator = require("../middlewares/tokenValidator");
 
 router.get("/", cors(), getAllRobots);
 router.get("/:idRobot", cors(), getRobot);
-router.post("/factory", tokenValidator, createRobot);
-router.put("/update", tokenValidator, updateRobot);
-router.delete("/delete/:idRobot", tokenValidator, deleteRobot);
+router.post("/factory", cors(), tokenValidator, createRobot);
+router.put("/update", cors(), tokenValidator, updateRobot);
+router.delete("/delete/:idRobot", cors(), tokenValidator, deleteRobot);
 
 module.exports = router;
