@@ -1,5 +1,4 @@
-const { default: mongoose } = require("mongoose");
-const { model, Schema } = require("mongoose");
+const { model, Schema, SchemaTypes } = require("mongoose");
 require("mongoose-type-url");
 
 const RobotSchema = new Schema({
@@ -7,8 +6,8 @@ const RobotSchema = new Schema({
     type: String,
     required: true,
   },
-  img: {
-    type: mongoose.SchemaTypes.Url,
+  url: {
+    type: SchemaTypes.Url,
     required: true,
   },
   speed: {
