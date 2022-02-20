@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const morgan = require("morgan");
 const express = require("express");
 const helmet = require("helmet");
+const cors = require("cors");
 const robotsRouter = require("./routers/ robotsRouter");
 const { notFoundError, generalError } = require("./middlewares/errors");
 
@@ -30,7 +31,8 @@ app.use(express.json());
 
 app.use(helmet());
 
-app.use("/robots", robotsRouter);
+app.use("/robots", cors(), robotsRouter);
+
 app.use(notFoundError);
 app.use(generalError);
 

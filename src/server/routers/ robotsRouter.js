@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+
 const {
   getAllRobots,
   getRobot,
@@ -11,10 +11,10 @@ const {
 const router = express.Router();
 const tokenValidator = require("../middlewares/tokenValidator");
 
-router.get("/", cors(), getAllRobots);
-router.get("/:idRobot", cors(), getRobot);
-router.post("/factory", cors(), tokenValidator, createRobot);
-router.put("/update", cors(), tokenValidator, updateRobot);
-router.delete("/delete/:idRobot", cors(), tokenValidator, deleteRobot);
+router.get("/", getAllRobots);
+router.get("/:idRobot", getRobot);
+router.post("/factory", tokenValidator, createRobot);
+router.put("/update", tokenValidator, updateRobot);
+router.delete("/delete/:idRobot", tokenValidator, deleteRobot);
 
 module.exports = router;
