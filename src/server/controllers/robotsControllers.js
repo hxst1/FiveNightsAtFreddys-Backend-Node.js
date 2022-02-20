@@ -23,7 +23,50 @@ const getRobot = async (req, res, next) => {
   }
 };
 
+const createRobot = async (req, res, next) => {
+  try {
+    const robot = req.body;
+    const newRobot = await Robot.create(robot);
+    res.status(201).json(newRobot);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const updateRobot = async (req, res, next) => {
+  try {
+    const robot = req.body;
+    const updatedRobot = await Robot.findByIdAndUpdate(robot.id, robot);
+    res.status(200).json(updatedRobot);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const deleteRobot = async (req, res, next) => {
+  const { idRobot } = req.params;
+
+  try {
+    const robot = await Robot.findByIdAndDelete(idRobot);
+
+    if (robot) {
+      res.json(idRobot);
+      return;
+    }
+
+    const error = new Error("Robot not found");
+    error.code = 404;
+    next(error);
+  } catch (error) {
+    error.code = 400;
+    next(error);
+  }
+};
+
 module.exports = {
   getAllRobots,
   getRobot,
+  createRobot,
+  updateRobot,
+  deleteRobot,
 };
