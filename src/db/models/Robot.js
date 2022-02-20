@@ -17,7 +17,7 @@ const RobotSchema = new Schema({
     max: 10,
   },
   date: {
-    type: String,
+    type: Number,
     required: true,
   },
   endurace: {
