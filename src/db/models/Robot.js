@@ -1,4 +1,4 @@
-const { model, Schema, SchemaTypes } = require("mongoose");
+const { model, Schema } = require("mongoose");
 require("mongoose-type-url");
 
 const RobotSchema = new Schema({
@@ -7,7 +7,7 @@ const RobotSchema = new Schema({
     required: true,
   },
   url: {
-    type: SchemaTypes.Url,
+    type: String,
     required: true,
   },
   speed: {
