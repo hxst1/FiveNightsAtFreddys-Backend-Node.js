@@ -10,7 +10,7 @@ const generalError = (err, req, res, next) => {
   debug(chalk.red(`Error: ${err.message}`));
   const errorCode = err.code ?? 500;
   const errorMessage = err.code ? err.message : "General peting";
-  res.status(errorCode).json({ error: true, message: errorMessage });
+  res.status(errorCode).json({ error: true, message: err });
 };
 
 module.exports = {
