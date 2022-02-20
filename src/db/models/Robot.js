@@ -10,6 +10,9 @@ const RobotSchema = new Schema({
     type: String,
     required: true,
   },
+  game: {
+    type: String,
+  },
   speed: {
     type: Number,
     required: true,
