@@ -20,7 +20,7 @@ const RobotSchema = new Schema({
     type: Number,
     required: true,
   },
-  endurace: {
+  endurance: {
     type: Number,
     required: true,
     min: 0,
