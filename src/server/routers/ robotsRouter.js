@@ -7,14 +7,14 @@ const {
   updateRobot,
   deleteRobot,
 } = require("../controllers/robotsControllers");
+const { auth } = require("../middlewares/auth");
 
 const router = express.Router();
-const tokenValidator = require("../middlewares/tokenValidator");
 
-router.get("/", getAllRobots);
+router.get("/", auth, getAllRobots);
 router.get("/:idRobot", getRobot);
-router.post("/factory", tokenValidator, createRobot);
-router.put("/update", tokenValidator, updateRobot);
-router.delete("/delete/:idRobot", tokenValidator, deleteRobot);
+router.post("/factory", auth, createRobot);
+router.put("/update", auth, updateRobot);
+router.delete("/delete/:idRobot", auth, deleteRobot);
 
 module.exports = router;
