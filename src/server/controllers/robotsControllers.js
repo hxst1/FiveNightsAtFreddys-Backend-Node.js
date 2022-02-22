@@ -34,9 +34,10 @@ const createRobot = async (req, res, next) => {
 };
 
 const updateRobot = async (req, res, next) => {
+  const { idRobot } = req.params;
   try {
     const robot = req.body;
-    const updatedRobot = await Robot.findByIdAndUpdate(robot.id, robot);
+    const updatedRobot = await Robot.findByIdAndUpdate(idRobot, robot);
     res.status(200).json(updatedRobot);
   } catch (error) {
     next(error);
