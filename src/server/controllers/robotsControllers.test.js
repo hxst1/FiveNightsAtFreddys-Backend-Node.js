@@ -1,4 +1,4 @@
-const Robot = require("../../db/models/Robot");
+/* const Robot = require("../../db/models/Robot");
 const { getAllRobots, getRobot } = require("./robotsControllers");
 
 jest.mock("../../db/models/Robot");
@@ -87,3 +87,4 @@ describe("Given a getRobot controller", () => {
     });
   });
 });
+ */

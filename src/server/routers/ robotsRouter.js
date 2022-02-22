@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", auth, getAllRobots);
 router.get("/:idRobot", getRobot);
 router.post("/factory", auth, createRobot);
-router.put("/update", auth, updateRobot);
-router.delete("/delete/:idRobot", auth, deleteRobot);
+router.put("/:idRobot", auth, updateRobot);
+router.delete("/:idRobot", auth, deleteRobot);
 
 module.exports = router;
