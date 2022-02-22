@@ -11,7 +11,7 @@ const { auth } = require("../middlewares/auth");
 
 const router = express.Router();
 
-router.get("/", auth, getAllRobots);
+router.get("/", getAllRobots);
 router.get("/:idRobot", getRobot);
 router.post("/factory", auth, createRobot);
 router.put("/:idRobot", auth, updateRobot);
